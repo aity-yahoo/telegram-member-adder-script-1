@@ -1,171 +1,50 @@
-# telegram-member-adder-script
-How To Use
-June 08, 2023
-There are 43 options in venom Member Adding Script. All features are described below
+# Telegram Member Adder Script
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/sabnam777/telegram-member-adder-script/blob/main/LICENSE)
 
+This is a Python script for adding members to a Telegram group automatically. It utilizes the Telegram Bot API to perform the member addition process.
 
-1. Login :- Using this option you can login your telegran account
+## Features
 
-2. Banfilter + remover :- This filter can remove your banned account
+- Add multiple members to a Telegram group automatically.
+- Supports adding members from a CSV file.
+- Customizable delay between member additions.
+- Easy setup and configuration.
 
-3. spambotchecker + remover :- This option will check your account is limited or not and also can remove limited account
+## Prerequisites
 
-4. Scraper :- This is normal scraper. By this scraper you can scraper more than 200k member from Groups/Channel
+- Python 3.6 or higher
+- `python-telegram-bot` library
 
-5. Private Scraper :- This scraper can scraper members from private Group/Channel
+## Installation
 
-6. Daily Filter :- This filter scrapes members who are online in the last 24 hours 
+1. Clone the repository:
 
-7. Weekly Filter :- This filter scrapes members who are online in the last 7 days 
+   ```shell
+   git clone https://github.com/sabnam777/telegram-member-adder-script.git
+   
+2.Install the required dependencies:
 
-8. Scrap Admin :- This scraper can only scrape Admins in Group/Channel
+    pip install -r requirements.txt 
+   
+## Configuration
+Create a new Telegram Bot and obtain the API token. You can follow the official BotFather documentation for detailed instructions.
 
-9. Monthly Filter :- This filter scrapes members who are online in the last 7 weeks 
+Rename the config.example.ini file to config.ini.
 
-10. Non Active Filter :- This can scraper member Last seen a long time ago
+     [Telegram]
+     api_token = YOUR_TELEGRAM_API_TOKEN
+     group_id = YOUR_TELEGRAM_GROUP_ID
 
-11. DeleteAlreadyMember :- This is a type of filter that can remove scraped already member in data.csv
+    [General]
+     delay = 5  # Delay in seconds between member additions
+     Open config.ini in a text editor and provide the necessary details:   
 
-12. Set Profile Pic :- By this you can set pic on your accounts
+## Usage
+Prepare a CSV file containing the member details. The CSV file should have a header row with the columns: name, phone, username.
 
-13. Delete Profile Pic :- Delete profile pic on you accounts.
+Run the script:
+      ` python telegram_member_adder.py --file members.csv`
+Replace members.csv with the actual name of your CSV file.
 
-14. Auto Add Contact For Phone :- This can add member in you account's contacts.
-
-15. Delete Contact :- Remove all contact in your accounts
-
-16. Bulk Adder :- This can add bulk member in groups.
-
-17. Single Adder :- Add single member
-
-18. Adder :- Add from single account
-
-19. Single Joined Adder :- Add to joined group.
-
-20. Username Adder :- Add members by username
-
-21. User ID Adder :- Add by user id. You will get UserIDInvalidError if you don't follow the instructions carefully.
-
-22. Multiple Adder PC :- Add from multiple account add the same time but only for pc
-
-23. Join Group/Channel :- Join group or channel by link from bulk accounts
-
-24. Leave Group/Channel :- Leave group or channel by link from bulk accounts
-
-25. Telegran OTP Viewer :- Views telegram otp messages
-
-26. Send Message :- Send Message to Group members you can use this for promotion
-
-27. Report Spam A User :- Report A User who spam in Groups or PM/DM
-
-28. Scam Tag :- Give scam tag to scammers.
-
-29. Add the account here you want to antiban the account.
-
-30. Remove all Antiban Account.
-
-31. Get Termux/Device Info
-
-32. Exit :- Quit the script
-
-
-
-Instructions:-
-
-
-
-Step 1:- First Login your account in Script by option 1
-
-Step 2:- Second use scraper option 4 then you can add member
-
-Step 3:- Use username adder to add member in group because username adder is the best adder in script
-
-
-
-Installation:-
-
-
-
-Run all the command in termux
-
-
-
-termux-setup-storage
-
-apt update
-
-apt upgrade
-
-apt install python
-
-pkg install git
-
-pip install colorama
-
-
-
-Now extract venomv2.zip jn your file manager and copy script location
-
-
-
-Now go to script directory in termux
-
-by using this command
-
-
-
-cd /sdcard/(folder where you extract the zip file)
-
-
-
-Now run the command :-
-
-
-
-. python setup.py
-
-. python godtwo.py
-
-. python venom.py
-
-
-
-Now all Process is completed.
-
-
-
-
-
-How to use :-
-
-
-
-Edit config.ini from your file manager or any third party text editor application.
-
-
-
-Now Fill required value.
-
-
-
-All are explained here
-
-
-
-From Group = In this section link of group from where you want to SCRAPE member will be entered here
-
-To Group = In this section link of group from where you want to ADD member will be entered here
-
-GroupID = in this section you need to add group add of group ( Group id will get you from bot added in group where you want to add member as example the group id will look like this -1001561952101 )
-
-PhoneNumber = Enter phone number here only 1 number for using 'user id adder' you need to add multiple phone number like this 17312031527, 12612021971 but for username use single number here
-
-EnterStop = No need to edit this
-
-StartingAccount = Watch Video
-
-EndAccount = Watch Video
-
-
-EDIT
+The script will start adding members to the specified Telegram group. The progress and any errors encountered will be displayed in the console.
